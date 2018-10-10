@@ -41,9 +41,19 @@ document.querySelector('.btn-roll').addEventListener('click',function(){
         diceArraySize = prevDiceValue.length;
         if(prevDiceValue[diceArraySize-1] === prevDiceValue[diceArraySize-2] && prevDiceValue[diceArraySize-2] === 6){
             document.getElementById('score-'+activePlayer).textContent = 0;
-            prevDiceValue = [];
-            nextPlayer();
+        console.log(prevDiceValue[diceArraySize-1] + ' <-> '+prevDiceValue[diceArraySize-2]);
+        console.log(prevDiceValue[diceArraySize-1] === prevDiceValue[diceArraySize-2] && prevDiceValue[diceArraySize-2] === 6);
+        prevDiceValue = [];
+        prevPoints[activePlayer] = 0;
+        nextPlayer();
         }else if(dice !== 1){
+            var debug = {
+                activePlayer : activePlayer+1,
+                dice : dice,
+                playerPoints : playerPoints,
+                playerTotalPoints : playerPoints + dice
+            };
+            console.log(debug);
         playerPoints += dice;
         diceDOM = document.querySelector('.dice');
         diceDOM.style.display = 'block';
@@ -59,6 +69,9 @@ document.querySelector('.btn-roll').addEventListener('click',function(){
 document.querySelector('.btn-hold').addEventListener('click',function(){
     var setGoal;
     setGoal = document.querySelector('.setGoal').value;
+    if(setGoal === ''){
+        setGoal = 100;
+    }
     console.log(setGoal);
         if(gamePlaying){
         prevPoints[activePlayer] += playerPoints;
