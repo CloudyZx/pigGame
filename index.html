@@ -10,7 +10,25 @@
     </head>
 
     <body>
-        <div class="wrapper clearfix">
+            <div id="popup1">
+                <div class="popup">
+                    <h2>Foul</h2>
+                    <a class="close close1" href="#">&times;</a>
+                    <div class="content">
+                        You Got Two 6's
+                    </div>
+                </div>
+            </div>
+            <div id="popup2">
+                <div class="popup">
+                    <h2>Foul</h2>
+                    <a class="close close2" href="#">&times;</a>
+                    <div class="content">
+                        You Got 1 in the Dice
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper clearfix">
             <div class="player-0-panel active">
                 <div class="player-name" id="name-0">Player 1</div>
                 <div class="player-score" id="score-0">43</div>
@@ -33,9 +51,10 @@
             <button class="btn-roll"><i class="ion-ios-loop"></i>Roll dice</button>
             <button class="btn-hold"><i class="ion-ios-download-outline"></i>Hold</button>
             <input type="text" placeholder="Set Goal" class="setGoal">
-            <img src="dice-5.png" alt="Dice" class="dice">
+            <img src="dice-5.png" alt="Dice" class="dice1">
+            <img src="dice-5.png" alt="Dice" class="dice2">
         </div>
         
-        <script src="appv1.js"></script>
+        <script src="appv2.js"></script>
     </body>
 </html>
